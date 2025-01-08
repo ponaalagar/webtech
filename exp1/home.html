@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebTech Project</title>
+    <style>
+        /* Internal CSS */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="exp1.css">
+</head>
+<body>
+    <h2>WebTech Project</h2>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="name" style="margin-bottom: 10px;"><br>
+        Email: <input type="text" name="email" style="margin-bottom: 10px;"><br>
+        <input type="submit" value="Submit">
+        <p class="error" id="error-message"></p>
+    </form>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td>Jane Doe</td>
+            <td>jane@example.com</td>
+        </tr>
+    </table>
+
+    <script>
+        // Inline JavaScript for form validation
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (name == "" || email == "") {
+                errorMessage.innerHTML = "Name and Email must be filled out";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

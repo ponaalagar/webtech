@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+        
+    </head>
+    <body>
+        <h1>the object is not found</h1>
+        <h2>the prompt() method</h2>
+        <button onclick = "myfunc()">click me</button>
+        <script>
+            function myfunc(){
+                var txt;
+                var person = prompt("please enter your name");
+                if(person == null || person == ""){
+                    txt = "user cancelled the prompt";
+                }else{
+                    txt = "hello " + person + "! how are you today?";
+                }
+                document.getElementById("demo").innerHTML = txt + "<br>vanakam";
+            }
+        </script>
+        <p id = "demo"></p>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Operations</title>
+        <script>
+            var first;
+            var second;
+            var n1,n2;
+            var sum,sub,mul,div;
+
+            first  = window.prompt("Enter the first number");
+            second = window.prompt("Enter the second number");
+
+            n1 = parseInt(first);
+            n2 = parseInt(second);
+
+            sum = n1+n2;
+            sub = n1-n2;
+            mul = n1*n2;
+            div = n1/n2;
+
+            document.write("The sum of "+n1+" and "+n2+" is <h>"+sum+"</h>");
+            document.write("<br/>");
+            document.write("The difference of "+n1+" and "+n2+" is "+sub);
+            document.write("<br/>");
+            document.write("The product of "+n1+" and "+n2+" is "+mul);
+            document.write("<br/>");
+            
+            document.getElementById("btn").innerHTML=sum;
+
+        </script>
+    </head>
+    <body >
+<button  type='button'><p id = "btn"></p></button>
+
+    </body>
+</html>

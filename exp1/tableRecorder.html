@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Details</h2>
+    <div id="tableContainer"></div>
+
+    <script>
+        // Sample student data
+        const students = [
+            {
+                rollNo: "1",
+                name: "John Doe",
+                age: 20,
+                grade: "A",
+                department: "Computer Science"
+            },
+            {
+                rollNo: "2",
+                name: "Jane Smith",
+                age: 21,
+                grade: "B+",
+                department: "Electronics"
+            },
+            {
+                rollNo: "3",
+                name: "Bob Wilson",
+                age: 19,
+                grade: "A-",
+                department: "Mechanical"
+            },
+            {
+                rollNo: "4",
+                name: "Alice Brown",
+                age: 20,
+                grade: "A+",
+                department: "Computer Science"
+            }
+        ];
+
+        // Function to create and populate the table
+        function createStudentTable() {
+            let tableHTML = `
+                <table>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Grade</th>
+                        <th>Department</th>
+                    </tr>`;
+            
+            // Using for loop to iterate through students array
+            for (let i = 0; i < students.length; i++) {
+                tableHTML += `
+                    <tr>
+                        <td>${students[i].rollNo}</td>
+                        <td>${students[i].name}</td>
+                        <td>${students[i].age}</td>
+                        <td>${students[i].grade}</td>
+                        <td>${students[i].department}</td>
+                    </tr>`;
+            }
+            
+            tableHTML += `</table>`;
+            document.getElementById('tableContainer').innerHTML = tableHTML;
+        }
+
+        // Call the function when page loads
+        window.onload = createStudentTable;
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- This declaration defines the document type and version of HTML being used -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci Series</h1>
+    <input type="number" id="num" placeholder="Enter number of terms">
+    <button onclick="printFibonacci()">Generate</button>
+    <p id="result"></p>
+
+    <script>
+        function printFibonacci() {
+            const num = parseInt(document.getElementById('num').value);
+            let fibSeries = [];
+            let a = 0, b = 1;
+
+            for (let i = 0; i < num; i++) {
+                fibSeries.push(a);
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+
+            document.getElementById('result').innerText = fibSeries.join(', ');
+        }
+    </script>
+</body>
+</html>
